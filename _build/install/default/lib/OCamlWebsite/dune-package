@@ -1,0 +1,7 @@
+(lang dune 3.17)
+(name OCamlWebsite)
+(sections (lib .) (bin ../../bin) (doc ../../doc/OCamlWebsite))
+(files
+ (lib (META dune-package opam))
+ (bin (OCamlWebsite.exe))
+ (doc (README.md)))

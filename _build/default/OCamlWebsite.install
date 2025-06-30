@@ -1,0 +1,11 @@
+lib: [
+  "_build/install/default/lib/OCamlWebsite/META"
+  "_build/install/default/lib/OCamlWebsite/dune-package"
+  "_build/install/default/lib/OCamlWebsite/opam"
+]
+bin: [
+  "_build/install/default/bin/OCamlWebsite.exe"
+]
+doc: [
+  "_build/install/default/doc/OCamlWebsite/README.md"
+]
