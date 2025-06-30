@@ -1,4 +1,4 @@
 (executable
  (public_name OCamlWebsite)
  (name main)
- (libraries OCamlWebsite))
+ (libraries OCamlWebsite dream))
