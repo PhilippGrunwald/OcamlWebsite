@@ -1,0 +1,7 @@
+# C:\Users\phili\AppData\Local\opam\cas_switch\bin\dune.exe init proj OCamlWebsite
+# OCAMLPARAM: unset
+# Shared cache: enabled-except-user-rules
+# Shared cache location:
+# C:\Users\phili\AppData\Local\Microsoft\Windows\INetCache\dune\db
+# Workspace root: "C:\\dev\\ocaml\\OCamlServer\\OCamlWebsite"
+# Auto-detected concurrency: 4
