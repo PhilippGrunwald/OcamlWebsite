@@ -1,2 +1,4 @@
 (library
- (name OCamlWebsite))
+ (name OCamlWebsite)
+ (modules page)
+ (libraries dream tyxml))

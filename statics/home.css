@@ -1,0 +1,18 @@
+:root {
+    --c-background: #FBFBFF;
+    --c-rich-black: #040F16;
+    --c-process-cyan: #01BAEF;
+    --c-indigo-dye: #0B4F6C;
+    --c-eng-orange: #B80C09;
+}
+
+
+body {
+    background: var(--c-background);
+}
+
+
+h1 {
+    color : var(--c-rich-black);
+    text-align: center;
+}
