@@ -1,15 +1,35 @@
-let genericpage _request =
-  let module H = Tyxml.Html in
+let fill_genericpage contents =
+  let open Tyxml.Html in
   let page =
-    H.html
-      (H.head (H.title (H.txt "OCamlWebsite")) 
+    html
+    (head (title (txt "OCamlWebsite")) 
         [
-          H.link  ~rel:[ `Stylesheet ] ~href:"./statics/home.css" ()
+          link  ~rel:[ `Stylesheet ] ~href:"./statics/home.css" ()
         ])
-      (H.body [
-         H.h1 [H.txt "Hello from TyXML!"];
-         H.p [H.txt "This is a safe HTML page."]
+    (body [
+      div ~a:[a_class ["header"]]
+        [
+          h1  [txt "Hello from TyXML!"];
+          a ~a:[a_href "/"; a_class ["button"]] [txt "Home"];
+          a ~a:[a_href "about"; a_class ["button"]] [txt "About"];
+        ];
+      div ~a:[a_class ["content_div"]]
+        contents
        ])
   in
   (* Format the HTML and return a proper response *)
   Dream.html (Format.asprintf "%a" (Tyxml.Html.pp ()) page)
+
+
+
+let empty_page_respond _request = 
+  fill_genericpage @@ []
+
+
+let about_page_respond _request = 
+  let open Tyxml.Html in
+  fill_genericpage @@  
+  [
+    h2 [txt "About"];
+    p [txt "Diese Seite ist mein Persönliches Projekt"]
+  ]

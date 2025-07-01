@@ -9,10 +9,45 @@
 
 body {
     background: var(--c-background);
+    margin: 0;
+    padding: 0;
+    color: var(--c-rich-black)
 }
 
 
 h1 {
     color : var(--c-rich-black);
+    text-align: left;
+    margin-left: 10vw;
+}
+
+.header {
+    border-color: var(--c-eng-orange);
+    border-width: 0px;
+    border-bottom-width: 2px;
+    border-style:solid;
+    display:flex;
+    gap:10vw;
+    align-items: center;
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--c-rich-black);
+    height: 1rem;
+    border-radius: 10%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
     text-align: center;
+    font-weight: bolder;
+    background-color: var(--c-process-cyan);
+}
+
+.content_div {
+    margin-left: 20vw;
+    margin-right: 20vw;
 }
