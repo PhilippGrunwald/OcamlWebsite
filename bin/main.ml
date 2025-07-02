@@ -19,9 +19,18 @@ let count_requests inner_handler request =
 let () =
   Dream.run
   @@ Dream.logger
+  @@ Dream.memory_sessions
   @@ count_requests
   @@ Dream.router [
-    Dream.get "/"  OCamlWebsite.Page.empty_page_respond;
+    Dream.get "/"  (fun request -> 
+      match Dream.session_field request "user" with
+      | None ->
+        let%lwt () = Dream.invalidate_session request in
+        let%lwt () = Dream.set_session_field request "user" "PhilippG" in
+        OCamlWebsite.Page.fill_genericpage @@ [Tyxml.Html.txt "You weren't logged in, but now you are"]
+      | Some username ->
+        OCamlWebsite.Page.fill_genericpage @@ [Tyxml.Html.txt @@ Printf.sprintf "Welcome back, %s" username]
+      );
 
     Dream.get "/about" OCamlWebsite.Page.about_page_respond;
 
