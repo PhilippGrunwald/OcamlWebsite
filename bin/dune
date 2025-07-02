@@ -1,4 +1,5 @@
 (executable
  (public_name OCamlWebsite)
  (name main)
- (libraries OCamlWebsite))
+ (libraries OCamlWebsite)
+ (preprocess (pps lwt_ppx)))
